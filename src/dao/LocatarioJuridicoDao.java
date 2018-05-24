@@ -1,4 +1,4 @@
-package tab;
+package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,10 +8,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.LocatarioJuridico;
 
-public class LocatarioJuridicoTab implements TabGenerica<LocatarioJuridico> {
+public class LocatarioJuridicoDao implements DaoGenerica<LocatarioJuridico> {
     private ConexaoBanco conexao;
 
-    public LocatarioJuridicoTab(ConexaoBanco conexao) {
+    public LocatarioJuridicoDao(ConexaoBanco conexao) {
         this.conexao = conexao;
     }
     
@@ -55,7 +55,7 @@ public class LocatarioJuridicoTab implements TabGenerica<LocatarioJuridico> {
         } catch(SQLException ex){
             throw new RuntimeException(ex);            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocatarioJuridicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocatarioJuridicoDao.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
 
@@ -89,7 +89,7 @@ public class LocatarioJuridicoTab implements TabGenerica<LocatarioJuridico> {
         } catch(SQLException ex){
             throw new RuntimeException(ex);            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocatarioJuridicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocatarioJuridicoDao.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
 
@@ -114,7 +114,7 @@ public class LocatarioJuridicoTab implements TabGenerica<LocatarioJuridico> {
         {
            throw new RuntimeException(ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocatarioJuridicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocatarioJuridicoDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -164,7 +164,7 @@ public class LocatarioJuridicoTab implements TabGenerica<LocatarioJuridico> {
         {
            throw new RuntimeException(ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocadorJuridicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocadorJuridicoDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }    

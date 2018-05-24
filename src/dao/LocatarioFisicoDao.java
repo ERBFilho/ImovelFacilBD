@@ -1,4 +1,4 @@
-package tab;
+package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,10 +10,10 @@ import modelo.LocatarioFisico;
 
 
 
-public class LocatarioFisicoTab implements TabGenerica<LocatarioFisico> {
+public class LocatarioFisicoDao implements DaoGenerica<LocatarioFisico> {
     private ConexaoBanco conexao;
 
-    public LocatarioFisicoTab(ConexaoBanco conexao) {
+    public LocatarioFisicoDao(ConexaoBanco conexao) {
         this.conexao = conexao;
     }
 
@@ -57,7 +57,7 @@ public class LocatarioFisicoTab implements TabGenerica<LocatarioFisico> {
         } catch(SQLException ex){
             throw new RuntimeException(ex);            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocatarioFisicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocatarioFisicoDao.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
 
@@ -91,7 +91,7 @@ public class LocatarioFisicoTab implements TabGenerica<LocatarioFisico> {
         } catch(SQLException ex){
             throw new RuntimeException(ex);            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocatarioFisicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocatarioFisicoDao.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
 
@@ -116,7 +116,7 @@ public class LocatarioFisicoTab implements TabGenerica<LocatarioFisico> {
         {
            throw new RuntimeException(ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocatarioFisicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocatarioFisicoDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

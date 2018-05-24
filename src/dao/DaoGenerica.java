@@ -1,8 +1,8 @@
-package tab;
+package dao;
 
 import java.util.ArrayList;
 
-public interface TabGenerica<ObjetoGenerico> {
+public interface DaoGenerica<ObjetoGenerico> {
     
     public void inserir(ObjetoGenerico objt);
     

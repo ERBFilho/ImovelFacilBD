@@ -12,8 +12,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import modelo.LocadorFisico;
 import modelo.LocadorJuridico;
-import tab.LocadorFisicoTab;
-import tab.LocadorJuridicoTab;
+import dao.LocadorFisicoTab;
+import dao.LocadorJuridicoDao;
 
 /**
  *
@@ -29,9 +29,9 @@ public class ImovelFacilBD extends Application {
         //LocadorFisicoTab lft = new LocadorFisicoTab();
         //lft.inserir(lf1);
        
-        LocadorJuridico lj1 = new LocadorJuridico("UESB", "Desconhecido", "SP", "São Paulo", "Flórida", "65666", "556777", "usp@hotmail.com", "12345", "USP", "675.665.087-21");
+        LocadorJuridico lj1 = new LocadorJuridico("TATATATA", "Desconhecido", "SP", "São Paulo", "Flórida", "65666", "556777", "usp@hotmail.com", "12345", "TATATAT", "675.665.087-21");
               
-        LocadorJuridicoTab ljt = new LocadorJuridicoTab();
+        LocadorJuridicoDao ljt = new LocadorJuridicoDao();
         ljt.inserir(lj1);
         Scene scene = new Scene(root);
         

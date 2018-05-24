@@ -1,4 +1,4 @@
-package tab;
+package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,19 +8,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
-import modelo.LocadorJuridico;
+import modelo.LocadorFisico;
 
-public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
+public class LocadorFisicoTab implements DaoGenerica<LocadorFisico> {
     private ConexaoBanco conexao;
-
-    public LocadorJuridicoTab(){
+    
+    public LocadorFisicoTab(){
         conexao = new ConexaoBanco();
-    }    
+    }
     
     @Override
-    public void inserir(LocadorJuridico locador) {
+    public void inserir(LocadorFisico locador) {
         String sql = "INSERT INTO Locador (Nome_Locador, Endereco_Locador, Bairro_Locador, Cidade_Locador, Estado_Locador, Celular_Locador, Telefone_Locador, Email_Locador, Senha_Locador) VALUES (?,?,?,?,?,?,?,?,?)";
-        String sql2 = "INSERT INTO Juridico_Locador (Cod_Locador, Razao_Social_Locador , CNPJ_Locador) VALUES (?,?,?)";
+        String sql2 = "INSERT INTO Fisico_Locador (Cod_Locador, Sexo_Locador, CPF_Locador) VALUES (?,?,?)";
         String sql3 = "SELECT max(Cod_Locador) FROM Locador";
         int maxId = 0;
         
@@ -48,8 +48,8 @@ public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
                 
                 sentenca = this.conexao.getConnection().prepareStatement(sql2);
                 sentenca.setInt(1, maxId);
-                sentenca.setString(2, locador.getRazao_Social_Locador());
-                sentenca.setString(3, locador.getCNPJ_Locador());
+                sentenca.setString(2, locador.getSexo_Locador());
+                sentenca.setString(3, locador.getCPF_Locador());
                 sentenca.execute();
                 sentenca.close();
                 this.conexao.getConnection().close();                
@@ -57,14 +57,14 @@ public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
         } catch(SQLException ex){
             throw new RuntimeException(ex);            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocadorJuridicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocadorFisicoTab.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
 
     @Override
-    public void alterar(LocadorJuridico locador) {
+    public void alterar(LocadorFisico locador) {
         String sql = "UPDATE Locador set Nome_Locador = ?, Endereco_Locador = ?, Bairro_Locador = ?, Cidade_Locador = ?, Estado_Locador = ?, Celular_Locador = ?, Telefone_Locador = ?, Email_Locador = ?, Senha_Locador = ? where Cod_Locador = ?";
-        String sql2 = "UPDATE Juridico_Locador set Razao_Social_Locador = ?, CNPJ_Locador = ? where Cod_Locador = ?";
+        String sql2 = "UPDATE Fisico_Locador set Sexo_Locador = ?, CPF_Locador = ? where Cod_Locador = ?";
         try{
             if(this.conexao.conectar()){
                 PreparedStatement sentenca = this.conexao.getConnection().prepareStatement(sql);                
@@ -81,8 +81,8 @@ public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
                 sentenca.execute();
                 sentenca.close();
                 sentenca = this.conexao.getConnection().prepareStatement(sql2);                
-                sentenca.setString(1, locador.getRazao_Social_Locador());
-                sentenca.setString(2, locador.getCNPJ_Locador());
+                sentenca.setString(1, locador.getSexo_Locador());
+                sentenca.setString(2, locador.getCPF_Locador());
                 sentenca.setInt(3, locador.getCod_Locador());
                 sentenca.execute();
                 sentenca.close();
@@ -91,7 +91,7 @@ public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
         } catch(SQLException ex){
             throw new RuntimeException(ex);            
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocadorJuridicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocadorFisicoTab.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
 
@@ -112,17 +112,18 @@ public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
                 this.conexao.getConnection().close();
             }
         }
-        catch(SQLException ex){
+        catch(SQLException ex)
+        {
            throw new RuntimeException(ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocadorJuridicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocadorFisicoTab.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
-    public ArrayList<LocadorJuridico> consultar() {
-        ArrayList<LocadorJuridico> listaLocadorFisico = new ArrayList<LocadorJuridico>();
-        String sql = "SELECT * FROM Locador join Juridico_Locador on Locador.Cod_Locador = Juridico_Locador.Cod_Locador";
+    public ArrayList<LocadorFisico> consultar() {
+        ArrayList<LocadorFisico> listaLocadorFisico = new ArrayList<LocadorFisico>();
+        String sql = "SELECT * FROM Locador join Fisico_Locador on Locador.Cod_Locador = Fisico_Locador.Cod_Locador";
         
         try
         {
@@ -137,7 +138,7 @@ public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
                 while(resultadoSentenca.next()) 
                 {
                     //resgata o valor de cada linha, selecionando pelo nome de cada coluna da tabela Escola
-                    LocadorJuridico locadorFisico = new LocadorJuridico();
+                    LocadorFisico locadorFisico = new LocadorFisico();
                     locadorFisico.setCod_Locador(resultadoSentenca.getInt("Cod_Locador"));
                     locadorFisico.setNome_Locador(resultadoSentenca.getString("Nome_Locador"));
                     locadorFisico.setEndereco_Locador(resultadoSentenca.getString("Endereco_Locador"));
@@ -148,8 +149,8 @@ public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
                     locadorFisico.setTelefone_Locador(resultadoSentenca.getString("Telefone_Locador"));
                     locadorFisico.setEmail_Locador(resultadoSentenca.getString("Email_Locador"));
                     locadorFisico.setSenha_Locador(resultadoSentenca.getString("Senha_Locador"));
-                    locadorFisico.setRazao_Social_Locador(resultadoSentenca.getString("Razao_Social_Locador "));
-                    locadorFisico.setCNPJ_Locador(resultadoSentenca.getString("CNPJ_Locador"));
+                    locadorFisico.setSexo_Locador(resultadoSentenca.getString("Sexo_Locador"));
+                    locadorFisico.setCPF_Locador(resultadoSentenca.getString("CPF_Locador"));
                    
                     //adiciona cada tupla na listaEscolas que será retornada para a janela Escola
                     listaLocadorFisico.add(locadorFisico);
@@ -161,11 +162,12 @@ public class LocadorJuridicoTab implements TabGenerica<LocadorJuridico> {
             
             return listaLocadorFisico;
         }
-        catch(SQLException ex){
+        catch(SQLException ex)
+        {
            throw new RuntimeException(ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LocadorJuridicoTab.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LocadorFisicoTab.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
-    }    
+    }
 }
