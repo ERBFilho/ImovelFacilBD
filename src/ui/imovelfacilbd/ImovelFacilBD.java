@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package imovelfacilbd;
+package ui.imovelfacilbd;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -29,10 +29,10 @@ public class ImovelFacilBD extends Application {
         //LocadorFisicoTab lft = new LocadorFisicoTab();
         //lft.inserir(lf1);
        
-        LocadorJuridico lj1 = new LocadorJuridico("TATATATA", "Desconhecido", "SP", "São Paulo", "Flórida", "65666", "556777", "usp@hotmail.com", "12345", "TATATAT", "675.665.087-21");
+        //LocadorJuridico lj1 = new LocadorJuridico("TATATATA", "Desconhecido", "SP", "São Paulo", "Flórida", "65666", "556777", "usp@hotmail.com", "12345", "TATATAT", "675.665.087-21");
               
-        LocadorJuridicoDao ljt = new LocadorJuridicoDao();
-        ljt.inserir(lj1);
+        //LocadorJuridicoDao ljt = new LocadorJuridicoDao();
+        //ljt.inserir(lj1);
         Scene scene = new Scene(root);
         
         stage.setScene(scene);

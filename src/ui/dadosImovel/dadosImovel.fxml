@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="394.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.dadosImovel.dadosImovelController">
+    <stylesheets>
+        <URL value="@editardados.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="394.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/dadosImovel/dadosImovel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="29.0" fitWidth="38.0" layoutX="20.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/dadosImovel/setaVoltar.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutY="132.0" prefHeight="568.0" prefWidth="394.0">
+         <children>
+            <ImageView fitHeight="146.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagens/dadosImovel/imagemPadrao.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="394.0">
+               <children>
+                  <Label text="CODIGO IMÓVEL:  ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="LabelXXXXXXXXXXXXX">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="394.0">
+               <children>
+                  <Label text="NOME IMÓVEL:  ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="LabelXXXXXXXXXXXXX">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="394.0">
+               <children>
+                  <Label text="ENDEREÇO IMÓVEL:  ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="LabelXXXXXXXXXXXXX">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="394.0">
+               <children>
+                  <Label text="BAIRRO IMÓVEL:  ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="LabelXXXXXXXXXXXXX">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="394.0">
+               <children>
+                  <Label text="CIDADE IMÓVEL:  ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="LabelXXXXXXXXXXXXX">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="394.0">
+               <children>
+                  <Label text="ESTADO IMÓVEL:  ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="LabelXXXXXXXXXXXXX">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="394.0">
+               <children>
+                  <Label text="CATEGORIA IMÓVEL:  ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="LabelXXXXXXXXXXXXX">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label text="ESCRIÇÃO GERAL:  ">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextArea editable="false" maxHeight="141.0" maxWidth="350.0" prefHeight="137.0" prefWidth="350.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="painelRaiz" prefHeight="700.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.imovelfacilbd.FXMLDocumentController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="394.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/Login/background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="logarBut" fitHeight="150.0" fitWidth="158.0" layoutX="196.0" layoutY="635.0" onMouseEntered="#mouseHover" onMouseExited="#mouseExit" onMousePressed="#mousePressed" onMouseReleased="#mouseReleased" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/Login/logarBut.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cadastrarBut" fitHeight="56.0" fitWidth="158.0" layoutX="33.0" layoutY="636.0" onMouseEntered="#mouseHoverC" onMouseExited="#mouseExitC" onMousePressed="#mousePressedC" onMouseReleased="#mouseReleasedC" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/Login/cadastrarBut.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="414.0" prefHeight="191.0" prefWidth="396.0">
+         <children>
+            <TextField fx:id="loginField" alignment="CENTER" maxWidth="300.0" prefHeight="60.0" prefWidth="325.0" promptText="LOGIN(ID)">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="senhaField" alignment="CENTER" maxWidth="300.0" prefHeight="60.0" prefWidth="300.0" promptText="SENHA">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox alignment="CENTER" prefHeight="84.0" prefWidth="384.0">
+               <children>
+                  <JFXCheckBox fx:id="locadorCheck" checkedColor="#879c10" lineSpacing="1.0" onAction="#selecionarLocador" prefHeight="57.0" prefWidth="35.0" text=" " unCheckedColor="WHITE" />
+                  <Label graphicTextGap="10.0" text="LOCADOR" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="84.0" prefWidth="28.0" />
+                  <JFXCheckBox fx:id="locatarioCheck" checkedColor="#879c10" lineSpacing="1.0" onAction="#selecionarLocatario" prefHeight="57.0" prefWidth="35.0" text=" " unCheckedColor="WHITE" />
+                  <Label graphicTextGap="10.0" text="LOCATÁRIO" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

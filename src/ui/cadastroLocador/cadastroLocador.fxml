@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="painelRaiz" prefHeight="700.0" prefWidth="394.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.cadastroLocador.CadastroLocadorController">
+    <stylesheets>
+        <URL value="@cadastro.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="394.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/cadastro/backGround.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="700.0" fitWidth="394.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/cadastro/cadastro.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="700.0" prefWidth="394.0" spacing="5.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="31.0" prefWidth="394.0">
+               <children>
+                  <JFXCheckBox fx:id="pFisicaCheck" checkedColor="#ff0040" lineSpacing="1.0" onAction="#pFisicaSelecionado" prefHeight="57.0" prefWidth="35.0" text=" " unCheckedColor="BLACK" />
+                  <Label graphicTextGap="10.0" text="P.FISICA">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="84.0" prefWidth="28.0" />
+                  <JFXCheckBox fx:id="pJuridicaCheck" checkedColor="#ff0040" lineSpacing="1.0" onAction="#pJuridicaSelecionado" prefHeight="57.0" prefWidth="35.0" text=" " unCheckedColor="BLACK" />
+                  <Label graphicTextGap="10.0" text="P.JURIDICA">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="nomeEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="NOME" />
+            <TextField fx:id="enderecoEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="ENDEREÇO" />
+            <TextField fx:id="bairroEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="BAIRRO" />
+            <TextField fx:id="cidadeEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="CIDADE" />
+            <TextField fx:id="estadoEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="ESTADO" />
+            <TextField fx:id="celularEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="CELULAR" />
+            <TextField fx:id="telefoneEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="TELEFONE" />
+            <TextField fx:id="emailEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="EMAIL" />
+            <TextField fx:id="senhaEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="320.0" promptText="SENHA" />
+            <VBox prefHeight="104.0" prefWidth="394.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="43.0" prefWidth="394.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="cpfEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" promptText="CPF" />
+                        <TextField fx:id="cnpjEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" promptText="CNPJ" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="43.0" prefWidth="394.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="sexoEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" promptText="SEXO" />
+                        <TextField fx:id="rSocialEntrada" maxHeight="-Infinity" maxWidth="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" promptText="RAZÃO SOCIAL" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="76.0" prefWidth="394.0" spacing="20.0">
+               <children>
+                  <ImageView fx:id="butCancelar" fitHeight="57.0" fitWidth="177.0" onMousePressed="#cancelarBut" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagens/cadastro/cancelarBut.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="butSalvar" fitHeight="57.0" fitWidth="158.0" onMousePressed="#salvar" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagens/cadastro/salvarBut.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

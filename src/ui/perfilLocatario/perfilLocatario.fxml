@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="painelRaiz" prefHeight="700.0" prefWidth="394.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.perfilLocatario.PerfilLocatarioController">
+    <stylesheets>
+        <URL value="@perfillocatario.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="394.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/perfilLocatario/backGround.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="avatarPerfil" fitHeight="150.0" fitWidth="200.0" layoutX="123.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/perfilLocatario/backGround4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="voltarBut" fitHeight="29.0" fitWidth="38.0" layoutX="20.0" layoutY="30.0" onMousePressed="#mousePressedVoltar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagens/perfilLocador/setaVoltar.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="201.0" prefHeight="294.0" prefWidth="394.0">
+         <children>
+            <Label fx:id="nomeLabel" text=" Harleen Frances Quinzel" textFill="#545454">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="ruaLabel" text="Endereço Endereço">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="bairroLabel" text="Bairro">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="35.0" prefWidth="137.0" spacing="20.0">
+               <children>
+                  <Label fx:id="cidadeLabel" text="cidade">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="estadoLabel" text="estado">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="394.0" spacing="10.0">
+               <children>
+                  <Label text="TELEFONE:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="telefoneLabel" text="9999999999">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="80.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="394.0" spacing="10.0">
+               <children>
+                  <Label text="CELULAR:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="celularLabel" text="888888888888">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="80.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="email: ">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailLabel" text="harley@gmail.com">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="BOTTOM_CENTER" layoutY="500.0" prefHeight="200.0" prefWidth="394.0" spacing="10.0">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="325.0" onMousePressed="#favoritos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagens/perfilLocatario/favoritosBut.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="procurarImovelBut" fitHeight="57.0" fitWidth="325.0" onMousePressed="#procurarImoveis" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagens/perfilLocatario/procuarImoveisBut.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="editarPerfilBut" fitHeight="50.0" fitWidth="175.0" onMousePressed="#editarPerfil" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagens/perfilLocatario/editarPerfilBut.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
